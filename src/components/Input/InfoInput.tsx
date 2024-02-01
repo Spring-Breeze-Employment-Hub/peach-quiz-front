@@ -1,25 +1,23 @@
-'use client'
-import { useInput } from '@/hooks/useInput'
-import { useNicknameStore } from '@/store/userInfoStore'
-import React, { useEffect } from 'react'
-import { uploadImage } from '../../../supabase/api'
-import { useMounted } from '@/hooks/useMounted'
+'use client';
+import { useNicknameStore } from '@/store/userInfoStore';
+import React from 'react';
+import { useMounted } from '@/hooks/useMounted';
 
 const InfoInput = ({
   placeholder,
   name,
 }: {
-  placeholder: string
-  name: 'nickname' | 'photo'
+  placeholder: string;
+  name: 'nickname' | 'photo';
 }) => {
   const { nickname, image, onChangeNickname, onChangeImage } = useNicknameStore(
-    (state) => state,
-  )
+    (state) => state
+  );
+  const { isMounted } = useMounted();
 
-  useEffect(() => {}, [image])
   return (
     <>
-      {name === 'nickname' ? (
+      {isMounted && name === 'nickname' ? (
         <input
           type="text"
           placeholder={placeholder}
@@ -36,16 +34,20 @@ const InfoInput = ({
             name={name}
             accept=".png, .jpg, .jpeg"
             onChange={(e) => {
-              onChangeImage(e.target.files?.[0])
+              onChangeImage(e.target.files);
             }}
           />
           Click!
         </label>
       ) : (
-        <img src={image} className="rounded-full h-[150px] w-[150px]" />
+        <img
+          src={image}
+          className="rounded-full h-[150px] w-[150px] cur"
+          alt="사용자 이미지"
+        />
       )}
     </>
-  )
-}
+  );
+};
 
-export default InfoInput
+export default InfoInput;
