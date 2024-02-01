@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const RoomPage = () => {
   return (
@@ -154,7 +154,7 @@ const RoomPage = () => {
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default RoomPage
+export default RoomPage;
