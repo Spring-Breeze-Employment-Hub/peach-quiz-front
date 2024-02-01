@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useState } from 'react';
 
 /**
  *
@@ -7,13 +7,13 @@ import { ChangeEvent, useState } from 'react'
  * @returns inputValue, onChangeEvent
  */
 export const useInput = () => {
-  const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('');
   const onChangeEvent = (event: ChangeEvent<HTMLInputElement>) => {
-    const { value, name } = event.target
+    const { value, name } = event.target;
 
-    setInputValue(value)
-    console.log(inputValue, 'input')
-  }
+    setInputValue(value);
+    console.log(inputValue, 'input');
+  };
 
-  return { inputValue, onChangeEvent }
-}
+  return { inputValue, onChangeEvent };
+};
