@@ -15,6 +15,7 @@ const InfoPage = () => {
   const router = useRouter();
   if (nickname.length === 0 || image.length === 0) {
     alert('닉네임 혹은 이미지를 설정해주세요!');
+    console.log('hi');
     router.push('/');
   }
 
