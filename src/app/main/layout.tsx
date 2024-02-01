@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const InfoLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -13,7 +13,7 @@ const InfoLayout = ({ children }: { children: React.ReactNode }) => {
         {children}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default InfoLayout
+export default InfoLayout;
